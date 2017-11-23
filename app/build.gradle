@@ -5,6 +5,7 @@ android {
     buildToolsVersion '26.0.2'
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.mohamedalshaer.myfriendassisstant"
@@ -29,4 +30,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+
 }

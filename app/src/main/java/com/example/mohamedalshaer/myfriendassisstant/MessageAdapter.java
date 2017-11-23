@@ -49,10 +49,10 @@ public class MessageAdapter extends ArrayAdapter<ChatBubble> {
         return convertView;
     }
 
-//    @Override
-//    public int getViewTypeCount() {
-//        return 2;
-//    }
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
 
     @Override
     public int getItemViewType(int position) {
