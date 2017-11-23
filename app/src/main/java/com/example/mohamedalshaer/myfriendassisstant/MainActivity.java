@@ -183,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 ChatBubble ChatBubble = new ChatBubble(message,false);
                 ChatBubbles.add(ChatBubble);
                 adapter.notifyDataSetChanged();
+
             }
         }
     }
