@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     private View btnSend;
+    private  View calendarbtn;
     private EditText editText;
     boolean myMessage = true;
     private List<ChatBubble> ChatBubbles;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list_msg);
         btnSend = findViewById(R.id.btn_chat_send);
+        calendarbtn = findViewById(R.id.quick_action_button);
+
         editText = (EditText) findViewById(R.id.msg_type);
 
         //set ListView adapter first
@@ -76,6 +79,19 @@ public class MainActivity extends AppCompatActivity {
                     String m = editText.getText().toString();
                     editText.setText("");
 
+                    String [] params = {"chat","POST",m};
+                    new FetchReply().execute(params);
+                }
+            }
+        });
+
+        calendarbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (loggedin.equals("")) {
+                    Toast.makeText(MainActivity.this, "You are not logged in", Toast.LENGTH_SHORT).show();
+                } else {
+                    String m = "show calendar . loggedin_id: "+loggedin+".";
                     String [] params = {"chat","POST",m};
                     new FetchReply().execute(params);
                 }
@@ -144,6 +160,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                    JSONObject explrObject = new JSONObject(result.toString());
+                    if(explrObject.has("uuid") )
+                    {
+                        loggedin = explrObject.getString("uuid");
+                    }
                     message = explrObject.getString("message");
                 }
 
