@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     String m = "show calendar . loggedin_id: "+loggedin+".";
                     String [] params = {"chat","POST",m};
+                    ChatBubble ChatBubble = new ChatBubble("View my Calendar ", true);
+                    ChatBubbles.add(ChatBubble);
+                    adapter.notifyDataSetChanged();
                     new FetchReply().execute(params);
                 }
             }
