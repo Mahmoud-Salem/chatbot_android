@@ -7,6 +7,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:orientation="vertical"
+        android:background="@drawable/out_message_bg"
         android:paddingBottom="10dp">
 
         <TextView

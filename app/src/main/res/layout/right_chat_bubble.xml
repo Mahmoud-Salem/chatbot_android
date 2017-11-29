@@ -6,6 +6,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:background="@drawable/in_message_bg"
         android:orientation="vertical"
         android:paddingBottom="10dp">
 
